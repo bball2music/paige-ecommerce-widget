@@ -33,8 +33,8 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let product">
-          <button mat-icon-button routerLink="/product-detail/{{ product.sku }}"><mat-icon>edit</mat-icon></button>
-          <button mat-icon-button (click)="deleteProduct(product)"><mat-icon>delete</mat-icon></button>
+          <button mat-icon-button routerLink="/product-detail/{{ product.sku }}" color="primary"><mat-icon>edit</mat-icon></button>
+          <button mat-icon-button (click)="deleteProduct(product)" color="warn"><mat-icon>delete</mat-icon></button>
         </td>
       </ng-container>
 
