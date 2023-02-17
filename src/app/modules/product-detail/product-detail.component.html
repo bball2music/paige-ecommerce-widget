@@ -1,0 +1,41 @@
+<mat-card class="mat-elevation-z0">
+  <h1>Product</h1>
+
+  <mat-card-content>
+    <form *ngIf="product" [formGroup]="productForm" class="product-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="Name">
+        <mat-error *ngIf="productForm.controls['name'].invalid">Name is required and must be less than 56 characters.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <input matInput formControlName="type" placeholder="Type">
+        <mat-error *ngIf="productForm.controls['type'].invalid">Type is required and must be less than 56 characters.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" placeholder="Description"></textarea>
+        <mat-error *ngIf="productForm.controls['description'].invalid">Description is required and must be less than 56 characters.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Color</mat-label>
+        <input matInput formControlName="color" placeholder="Color">
+        <mat-error *ngIf="productForm.controls['color'].invalid">Color is required and must be less than 56 characters.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput formControlName="price" placeholder="Price" type="number">
+        <mat-error *ngIf="productForm.controls['price'].invalid">Price cannot be less than 0.</mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="mat-elevation-z0">
+    <button color="primary" mat-raised-button (click)="saveProduct()">Update</button>
+    <button color="warn" mat-raised-button routerLink="/product-list">Cancel</button>
+  </mat-card-actions>
+</mat-card>
